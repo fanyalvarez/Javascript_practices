@@ -56,3 +56,4 @@ else if (number > 10 && number < 99) {
 let numb = 10
 let calculate = numb % 2
 let parOrImpar = calculate === 1 ? console.log(`The number ${numb} is impar`) : console.log(`The number ${numb} is par`)
+
