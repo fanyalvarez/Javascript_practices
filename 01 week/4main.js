@@ -1,39 +1,35 @@
 console.log('-----Ex 1 comprobar si un numero es par------')
-const numero = 10
+const numeroPar = 10
 
-const esNumeroPar = (numero) => {
-    if (numero % 2 == 0) {
+const esNumeroPar = (numeroPar) => {
+    if (numeroPar % 2 == 0) {
         return true
     } else {
         return false
     }
 }
-console.log(esNumeroPar(numero))
+console.log(esNumeroPar(numeroPar))
 
 
 console.log('-----Ex 2 imprimir en pantalla todos los divisores de 1 a 100 de un numero entero------')
-const number = 5
+const number = 2
 
-
-const divisor = (number) => {
-    for (let index = 0; index < 100; index++) {
-        console.log(index)
-        if ((index % number) === 0) {
-            console.log(divisor)
-        }
+for (let index = 1; index <= 20; index++) {
+    const divisor = (number) => (index % number == 0)
+    if (divisor(number)) {
+        console.log(divisor(number))
     }
 }
 
 
 console.log('-----Ex 3 comprobar si un numero es primo------')
+const numeroPrimo = 8
 
-const primo = 8
-
-const esPrimo = (numero) => {
-    if ((numero % 2) == 1) {
+const esPrimo = (numeroPrimo) => {
+    if (numeroPrimo % 2 == 1) {
         return true
     } else {
         return false
     }
 }
-console.log(esPrimo(primo))
+console.log(esPrimo(numeroPrimo))
