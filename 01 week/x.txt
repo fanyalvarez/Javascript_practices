@@ -1,0 +1,40 @@
+function minMinMax(array) {
+  // solution goes here!
+  
+  let smallest = Math.min(...array)
+  let largest = Math.max(...array)
+  
+  array.sort((a, b) => a-b);
+  
+  
+  minimumAbsent = 
+  
+  
+   return [smallest, minimumAbsent, largest]
+
+}
+//    let minimumAbsent = Math.min(...array)
+
+
+// let sorted = array.sort((a, b) => a - b);
+//   let smallest = array[0]
+//   let minimumAbsent = 
+//     for (i = 0; i < array.length; i++) {
+//     if ( sorted[i] != (i+1)) {           
+//       return (i+1);
+//      }
+    
+//   let largest = array[array.length-1]
+  
+//    return [smallest, minimumAbsent, largest]
+
+
+
+
+function minMinMax(arr) {
+	var max = Math.max(...arr);
+  var min = Math.min(...arr);
+  for (var i = min; i < max; i++) {
+  	if (!arr.includes(i)) return [min, i, max];
+  }
+}

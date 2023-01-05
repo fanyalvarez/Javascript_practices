@@ -51,3 +51,7 @@ console.log('// findIndex devuelve el indece del  primer elemento de un array  /
 
 // find
 console.log('// find devuelve el valor del primer elemeno del array  //')
+
+
+// includes
+// sort
