@@ -1,3 +1,20 @@
+// clase
+// carro
+
+// atributos
+// color;
+// modelo;
+// marca;
+// placas;
+// dueno;
+// estado;
+
+// metodos
+// encender 
+// apagar
+// acelerar
+// grabar
+
 export default class Carro {
 
     color;
