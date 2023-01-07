@@ -17,55 +17,63 @@
 
 export default class Carro {
 
-    color;
-    modelo;
-    marca;
-    placas;
-    dueno;
-    estado;
+    #color;
+    #modelo;
+    #marca;
+    #placas;
+    #dueno;
+    #estado;
 
     constructor(color, modelo, marca, placas, dueno, estado) {
 
-        this.color = color;
-        this.modelo = modelo;
-        this.marca = marca;
-        this.placas = placas;
-        this.dueno = dueno;
-        this.estado = estado;
+        this.#color = color;
+        this.#modelo = modelo;
+        this.#marca = marca;
+        this.#placas = placas;
+        this.#dueno = dueno;
+        this.#estado = estado;
     }
 
     encender() {
-        console.log(`el carro de ${this.dueno} esta encendido`)
+        console.log(`el carro de ${this.#dueno} esta encendido`)
     }
 
     iniciarGrabacion() {
-        if (this.marca === 'tesla') {
+        if (this.#marca === 'tesla') {
             console.log('Iniciando grabacion')
         } else {
             console.log('tu carro no tiene esta funcion')
         }
     }
 
+    set dueno(dueno) {
+        this.#dueno = dueno
+    }
+
+    get dueno() {
+        return this.#dueno
+    }
+
     toJson() {
         const carro = {
-            color: this.color,
-            modelo: this.modelo,
-            marca: this.marca,
-            placa: this.placas,
-            dueno: this.dueno,
-            estado: this.estado,
+            color: this.#color,
+            modelo: this.#modelo,
+            marca: this.#marca,
+            placa: this.#placas,
+            dueno: this.#dueno,
+            estado: this.#estado,
         }
         return JSON.stringify(carro)
     }
 
     toObjetoLiteral() {
         return {
-            color: this.color,
-            modelo: this.modelo,
-            marca: this.marca,
-            placa: this.placas,
-            dueno: this.dueno,
-            estado: this.estado,
+            color: this.#color,
+            modelo: this.#modelo,
+            marca: this.#marca,
+            placa: this.#placas,
+            dueno: this.#dueno,
+            estado: this.#estado,
         }
     }
 }
