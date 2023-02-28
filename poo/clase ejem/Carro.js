@@ -1,7 +1,9 @@
 // clase
-// carro
+// carro   de donde se derivan, plantilla cada uno es una instancia
+//          encapsula las propiedades y funciones
+//            crear una objeto apartir de una clase es instanciar un ibjeto de la clase
 
-// atributos
+// atributos caracteristicas propiedades 
 // color;
 // modelo;
 // marca;
@@ -9,7 +11,7 @@
 // dueno;
 // estado;
 
-// metodos
+// metodos  funciones que puede ejecutar
 // encender 
 // apagar
 // acelerar

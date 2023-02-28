@@ -26,7 +26,7 @@ console.log('-----Ex 3 comprobar si un numero es primo------')
 const numeroPrimo = 8
 
 const esPrimo = (numeroPrimo) => {
-    if (numeroPrimo % 2 == 1) {
+    if (numeroPrimo % 3 == 1) {
         return true
     } else {
         return false

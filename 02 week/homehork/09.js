@@ -27,8 +27,17 @@ const buscarVocal = (cadena) => {
     }
     return resultado
 }
-const cadena = 'hOla'
+const cadena = 'hOla hola'
 console.log(buscarVocal(cadena))
 
-
-//1:20
+const buscarVocal2 = (cadena) => {
+    let caracteres = Array.from(cadena)
+    const result = caracteres.map((caracter) => {
+    return {
+        caracter,
+        esVocal: (/[aeiou]/i).test(caracter.toLowerCase())
+    }
+})
+return result
+}
+console.log(buscarVocal(cadena))

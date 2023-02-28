@@ -1,0 +1,22 @@
+## Terminología POO
+
+- Objetos
+     Son la pieza central de la POO. Los objetos se componen de datos (propiedades) y métodos (funciones) que operan sobre esos datos
+    
+- Propiedad
+    Es un dato que representa una característica de un objeto. Una propiedad es una variable. Un objeto puede tener muchas propiedades
+    
+- Método
+    Es una función que puede ejecutar nuestro objeto. Un objeto puede tener muchos métodos
+    
+- Clase
+    Funcionan son las plantillas y son utilizadas para instanciar (crear) objetos. Una clase encapsula (contiene) todas las propiedades y métodos que después almacenarán los objetos instanciados. Una clase Representa a un tipo de objeto; ejemplo: Libro, Automóvil, Perro.
+    
+- Constructor
+    Es un método que se llama en el momento de la creación de instancias(objetos). Los constructores son útiles para (valga la redundancia) "construir" o inicializar las propiedades de los objetos.
+    
+- Getter
+    Un getter es un método que permite acceder a una propiedad privada de un objeto en lugar de usar la propiedad directamente
+    
+- Setter
+    Un setter es un método que permite acceder y modificar una propiedad privada de un objeto en lugar de modificar la propiedad directamente
