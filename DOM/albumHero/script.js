@@ -52,56 +52,99 @@ const heros = [
     },
 ]
 
-const main = document.querySelector('main')
-console.log(main)
+const body = document.querySelector('body')
+console.log(body)
 
-const row = document.createElement('div')
-row.classList.add('row', 'row-cols-4', 'justify-content-md-center')
-main.append(row)
+const header = document.querySelector('header')
+const main = document.querySelector('main')
+const footer = document.querySelector('footer')
+
+const section = document.createElement('section')
+section.classList.add('jumbotron', 'text-center')
+const album = document.createElement('div')
+album.classList.add('album', 'py-5', 'bg-light')
+main.append(section, album)
+
+const containerTitle = document.createElement('div')
+containerTitle.classList.add('container')
+section.append(containerTitle)
+
+const h1 = document.createElement('h1')
+h1.classList.add('jumbotron-heading')
+h1.innerText = 'Album example'
+const pTitle = document.createElement('p')
+pTitle.classList.add('lead', 'text-muted')
+pTitle.innerText = 'Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks dont simply skip over it entirely.'
+const pLinks = document.createElement('div')
+containerTitle.append(h1, pTitle, pLinks)
+
+const aTitleOne = document.createElement('a')
+aTitleOne.classList.add('btn', 'btn-primary', 'mx-2')
+aTitleOne.href = '#'
+aTitleOne.innerText = 'Main call to action'
+const aTitleSecond = document.createElement('a')
+aTitleSecond.classList.add('btn', 'btn-secondary', 'my-2')
+aTitleSecond.href = '#'
+aTitleSecond.innerText = 'Secondary action'
+pLinks.append(aTitleOne, aTitleSecond)
+
+
+const containerAlbum = document.createElement('div')
+containerAlbum.classList.add('container')
+album.append(containerAlbum)
+
+const containerRow = document.createElement('div')
+containerRow.classList.add('row')
+containerAlbum.append(containerRow)
+
 
 heros.forEach((hero) => {
 
-    const card = document.createElement('div')
-    card.classList.add ('card')
-    card.style = 'margin:10px'; 
-    row.append(card)
+    const cardCol = document.createElement('div')
+    cardCol.classList.add('col-md-4')
+    containerRow.append(cardCol)
+    
+    const cardContent = document.createElement('div')
+    cardContent.classList.add('card', 'mb-4', 'box-shadow')
+    cardContent.style = 'height: 550px';
+    cardCol.append(cardContent)
 
     const imgCard = document.createElement('img')
-    imgCard.classList.add('col','card-img-top')
-    imgCard.style = 'height: 200px';
+    imgCard.classList.add('card-img-top')
+    imgCard.style = 'height: 250px';
+
     imgCard.src = hero.image
-    card.append(imgCard)
-
     const cardBody = document.createElement('div')
-    cardBody.classList.add('card-body')
-    card.append(cardBody)
-
+    
+    cardBody.classList.add('card-body','position-relative')
+    cardContent.append(imgCard, cardBody)
+    
     const h5 = document.createElement('h5')
     h5.classList.add('card-title')
     h5.innerText = hero.name
     cardBody.append(h5)
 
-    const p = document.createElement('p')
-    p.classList.add('card-text')
-    p.innerText = hero.about
-    cardBody.append(p)
+    const pText = document.createElement('p')
+    pText.classList.add('card-text')
+    pText.innerText = hero.about
+    // const divCont = document.createElement('div')
+    // divCont.classList.add('position-absolute','bottom-0', 'mb-3')
+    cardBody.append(pText)
 
-    const footer = document.createElement('div')
-    footer.classList.add('card-footer','bg-transparent', 'justify-content-md-start')
-    card.append(footer)
+    const divContBtn = document.createElement('div')
+    divContBtn.classList.add('btn-group','position-absolute','bottom-0','start-0', 'm-3')
+    const small = document.createElement('small')
+    small.classList.add('text-muted','position-absolute','bottom-0','end-0', 'm-3')
+    small.innerText = '9 mins'
+    cardBody.append(divContBtn, small)
 
-    const a = document.createElement('a')
-    a.classList.add('btn','btn-primary', 'me-md-2')
-    a.href = '#'
-    a.type = 'button'
-    a.innerText = 'view'
-    footer.append(a)
-
-    const a2 = document.createElement('a')
-    a2.classList.add('btn','btn-primary')
-    a2.href = '#'
-    a.type = 'button'
-    a2.innerText = 'view'
-    footer.append(a2)
-
+    const btnOne = document.createElement('button')
+    btnOne.classList.add('btn', 'btn-sm', 'btn-outline-secondary')
+    btnOne.type = 'button'
+    btnOne.innerText = 'View'
+    const btnSecond = document.createElement('button')
+    btnSecond.classList.add('btn', 'btn-sm', 'btn-outline-secondary')
+    btnSecond.type = 'button'
+    btnSecond.innerText = 'Edit'
+    divContBtn.append(btnOne, btnSecond)
 })
