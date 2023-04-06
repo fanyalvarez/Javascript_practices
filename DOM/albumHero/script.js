@@ -59,14 +59,104 @@ const header = document.querySelector('header')
 const main = document.querySelector('main')
 const footer = document.querySelector('footer')
 
+
+//navar
+const navbarHeader = document.createElement('div')
+navbarHeader.classList.add('bg-dark', 'collapse', 'show')
+header.append(navbarHeader)
+
+const containerNavbar = document.createElement('div')
+containerNavbar.classList.add('conatiner',)
+containerNavbar.style = "margin: 0 381px; padding: 0 15px;"
+navbarHeader.append(containerNavbar)
+
+const rowNavbar = document.createElement('div')
+rowNavbar.classList.add('row')
+containerNavbar.append(rowNavbar)
+
+const conten1Navbar = document.createElement('div')
+conten1Navbar.classList.add('col-sm-8', 'col-md-7', 'py-4')
+rowNavbar.append(conten1Navbar)
+
+const h4Navbar = document.createElement('h4')
+h4Navbar.classList.add('text-white')
+h4Navbar.innerText = ('About')
+const pNavbar = document.createElement('p')
+pNavbar.classList.add('text-muted')
+pNavbar.innerText = ('Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.')
+conten1Navbar.append(h4Navbar, pNavbar)
+
+const contenNavbar2 = document.createElement('div')
+contenNavbar2.classList.add('col-sm-4', 'offset-md-1', 'py-4')
+rowNavbar.append(contenNavbar2)
+
+const h4Navbar2 = document.createElement('h4')
+h4Navbar2.classList.add('text-white')
+h4Navbar2.innerText = ('Contact')
+const ulNavbar = document.createElement('ul')
+ulNavbar.classList.add('list-unstyled')
+contenNavbar2.append(h4Navbar2, ulNavbar)
+
+const socialmedia = [
+    {
+        link: ' #',
+        red: 'Follow on Twitter'
+    },
+    {
+        link: ' #',
+        red: 'Like on Facebook'
+    },
+    {
+        link: ' #',
+        red: 'Email me'
+    }
+]
+socialmedia.forEach((social) => {
+    const li = document.createElement('li')
+    ulNavbar.append(li)
+    const a = document.createElement('a')
+    a.classList.add('text-white')
+    a.innerText = (social.red)
+    li.append(a)
+})
+
+const navHeader = document.createElement('div')
+navHeader.classList.add('navbar', 'navbar-dark', 'bg-dark', 'box-shadow')
+header.append(navHeader)
+
+const navContent = document.createElement('div')
+navContent.classList.add('container', 'd-flex', 'justify-content-between')
+navContent.style = "margin: 0 381px; padding: 0 15px;"
+navHeader.append(navContent)
+
+const a= document.createElement('a')
+a.classList.add('navbar-brand','d-flex','align-items-center' )
+const buttonNav= document.createElement('button')
+buttonNav.classList.add('navbar-toggler')
+buttonNav.type = 'button'
+navContent.append(a, buttonNav)
+
+const strongNav = document.createElement('sytrong')
+strongNav.classList.add('row')
+strongNav.innerText = ('Album')
+a.append(strongNav)
+
+const spanNav= document.createElement('span')
+spanNav.classList.add('navbar-toggler-icon')
+navContent.append(spanNav)
+
+//section album
 const section = document.createElement('section')
-section.classList.add('jumbotron', 'text-center')
+section.classList.add('jumbotron', 'text-center','bg-transparent')
 const album = document.createElement('div')
 album.classList.add('album', 'py-5', 'bg-light')
 main.append(section, album)
 
+//album text
 const containerTitle = document.createElement('div')
 containerTitle.classList.add('container')
+containerTitle.style = " width: 640px"
+
 section.append(containerTitle)
 
 const h1 = document.createElement('h1')
@@ -75,19 +165,18 @@ h1.innerText = 'Album example'
 const pTitle = document.createElement('p')
 pTitle.classList.add('lead', 'text-muted')
 pTitle.innerText = 'Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks dont simply skip over it entirely.'
-const pLinks = document.createElement('div')
+const pLinks = document.createElement('p')
 containerTitle.append(h1, pTitle, pLinks)
 
 const aTitleOne = document.createElement('a')
-aTitleOne.classList.add('btn', 'btn-primary', 'mx-2')
+aTitleOne.classList.add('btn', 'btn-primary', 'my-2')
 aTitleOne.href = '#'
 aTitleOne.innerText = 'Main call to action'
 const aTitleSecond = document.createElement('a')
-aTitleSecond.classList.add('btn', 'btn-secondary', 'my-2')
+aTitleSecond.classList.add('btn', 'btn-secondary', 'mx-2')
 aTitleSecond.href = '#'
 aTitleSecond.innerText = 'Secondary action'
 pLinks.append(aTitleOne, aTitleSecond)
-
 
 const containerAlbum = document.createElement('div')
 containerAlbum.classList.add('container')
@@ -97,28 +186,26 @@ const containerRow = document.createElement('div')
 containerRow.classList.add('row')
 containerAlbum.append(containerRow)
 
-
+//cards
 heros.forEach((hero) => {
 
     const cardCol = document.createElement('div')
-    cardCol.classList.add('col-md-4')
+    cardCol.classList.add('col-md-4', 'h-')
     containerRow.append(cardCol)
-    
+
     const cardContent = document.createElement('div')
     cardContent.classList.add('card', 'mb-4', 'box-shadow')
-    cardContent.style = 'height: 550px';
+    cardContent.style = ' height: 550px'
     cardCol.append(cardContent)
 
     const imgCard = document.createElement('img')
     imgCard.classList.add('card-img-top')
-    imgCard.style = 'height: 250px';
-
+    imgCard.style = "height: 225px; width: 100%; display: block;"
     imgCard.src = hero.image
     const cardBody = document.createElement('div')
-    
-    cardBody.classList.add('card-body','position-relative')
+    cardBody.classList.add('card-body')
     cardContent.append(imgCard, cardBody)
-    
+
     const h5 = document.createElement('h5')
     h5.classList.add('card-title')
     h5.innerText = hero.name
@@ -126,17 +213,20 @@ heros.forEach((hero) => {
 
     const pText = document.createElement('p')
     pText.classList.add('card-text')
+    pText.style = "height: 200px"
     pText.innerText = hero.about
-    // const divCont = document.createElement('div')
-    // divCont.classList.add('position-absolute','bottom-0', 'mb-3')
     cardBody.append(pText)
 
+    const contentBodyBtn = document.createElement('div')
+    contentBodyBtn.classList.add('d-flex', 'justify-content-between', 'align-items-center')
+    cardBody.append(contentBodyBtn)
+
     const divContBtn = document.createElement('div')
-    divContBtn.classList.add('btn-group','position-absolute','bottom-0','start-0', 'm-3')
+    divContBtn.classList.add('btn-group')
     const small = document.createElement('small')
-    small.classList.add('text-muted','position-absolute','bottom-0','end-0', 'm-3')
+    small.classList.add('text-muted')
     small.innerText = '9 mins'
-    cardBody.append(divContBtn, small)
+    contentBodyBtn.append(divContBtn, small)
 
     const btnOne = document.createElement('button')
     btnOne.classList.add('btn', 'btn-sm', 'btn-outline-secondary')
@@ -148,3 +238,27 @@ heros.forEach((hero) => {
     btnSecond.innerText = 'Edit'
     divContBtn.append(btnOne, btnSecond)
 })
+
+//footer
+footer.classList.add('text-muted', 'p-5')
+
+const containerFooter = document.createElement('div')
+containerFooter.classList.add('container')
+footer.append(containerFooter)
+
+const pFooter = document.createElement('p')
+pFooter.classList.add('float-right')
+containerFooter.append(pFooter)
+
+const aFooter = document.createElement('a')
+aFooter.innerText = 'Back to top'
+pFooter.append(aFooter)
+
+const pTextFooter = document.createElement('p')
+pTextFooter.innerText = ('Album example is &copy; Bootstrap, but please download and customize it for yourself!')
+pTextFooter.style = 'margin: 3px'
+containerFooter.append(pTextFooter)
+
+const pTextFooterSecond = document.createElement('p')
+pTextFooterSecond.innerText = ('New to Bootstrap? Visit the homepage or read our getting started guide.')
+containerFooter.append(pTextFooterSecond)
